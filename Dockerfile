@@ -3,6 +3,7 @@ RUN docker-php-ext-install mysqli && docker-php-ext-enable mysqli
 RUN apt-get update && apt-get install -y netcat
 
 COPY src/ /var/www/html
+RUN mkdir /var/www/html/app/tmp
 RUN chown -R www-data:www-data /var/www/html
 RUN chmod -R 0555 /var/www/html
 RUN chmod -R 0777 /var/www/html/app/chaos /var/www/html/app/tmp
