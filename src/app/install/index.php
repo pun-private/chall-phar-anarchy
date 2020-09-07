@@ -24,6 +24,8 @@ if (isset($_GET['type'])) {
       goto FK_LOGIC;
     }
 
+    // not needed anymore
+    // mysqli_options(MYSQLI_OPT_LOCAL_INFILE, true);
     $mysqli = new mysqli(@$_GET['ip'], @$_GET['login'], @$_GET['password']);
     if ($mysqli->connect_error) {
         $msg  = "<div class='alert alert-error'>";
